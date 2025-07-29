@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("ResultScene");
+            SceneManager.LoadScene("SelectScene");
         }
     }
 }

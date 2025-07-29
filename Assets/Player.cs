@@ -50,5 +50,11 @@ public class Player : MonoBehaviour
             jumpForce = 350.0f;
             jumpCount = 0;
         }
+        //プレイヤーがdeathFloorに接触した場合の処理
+        if (other.gameObject.CompareTag("DeathFloor"))
+        {
+            //シーンを再読み込み
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     }
 }
