@@ -45,7 +45,7 @@ public class OpenDoorScript : MonoBehaviour
             //"Door"タグがついているかどうかを確認
             bool isDoorTagged = m_targetObject.activeSelf;
             // プレイヤーがドアの近く、かつ"Door"タグがついている場合、シーンを遷移する
-            if (_isPlayerNear && !isDoorTagged && Input.GetKeyDown(KeyCode.UpArrow))
+            if (_isPlayerNear && !isDoorTagged && Input.GetButtonDown("Jump"))
             {
                 // シーンを遷移する
                 SceneManager.LoadScene("SelectScene"); // "NextScene"は遷移先のシーン名に置き換えてください
