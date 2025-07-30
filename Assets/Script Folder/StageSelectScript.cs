@@ -24,8 +24,9 @@ public class StageSelectScript : MonoBehaviour
     {
         if (stageSelectPoints != null && stageSelectPoints.Length > 0)
         {
-            // 左キー（A）が押されたとき
-            if (Input.GetKeyDown(KeyCode.A))
+            // 十字キーの左が押されたとき
+
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 // インデックスを減らす（範囲内に収める）
                 currentStageIndex = Mathf.Max(currentStageIndex - 1, 0);
@@ -33,14 +34,14 @@ public class StageSelectScript : MonoBehaviour
             }
 
             // 右キー（D）が押されたとき
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 // インデックスを増やす（範囲内に収める）
                 currentStageIndex = Mathf.Min(currentStageIndex + 1, stageSelectPoints.Length - 1);
                 transform.position = stageSelectPoints[currentStageIndex].transform.position;
             }
 
-            // スペースキーでシーン切り替え
+            // ジャンプキーでシーン切り替え
             if (Input.GetButtonDown("Jump"))
             {
                 switch (currentStageIndex)
