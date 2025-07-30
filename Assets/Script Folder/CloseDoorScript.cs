@@ -42,14 +42,14 @@ public class CloseDoorScript : MonoBehaviour
         if (_isPlayerNear) {
             // プレイヤーがドアの近くにいる場合、ドアの座標とプレイヤーの座標を比較
             float distance = Vector2.Distance(_doorPosition, playerTransform.position);
-            _isPlayerNear = distance < 1.0f; // 1.0fは近くにいるとみなす距離の閾値
+            _isPlayerNear = distance < 0.5f; // 1.0fは近くにいるとみなす距離の閾値
         } else {
             // プレイヤーがドアの近くにいない場合、ドアの座標とプレイヤーの座標を比較
             float distance = Vector2.Distance(_doorPosition, playerTransform.position);
-            _isPlayerNear = distance < 1.0f; // 1.0fは近くにいるとみなす距離の閾値
+            _isPlayerNear = distance < 0.5f; // 1.0fは近くにいるとみなす距離の閾値
         }
        //プレイヤーがドアの近く、かつ上ボタンが入力された場合、ドアを非アクティブにする
-        if (_isPlayerNear && Input.GetKeyDown(KeyCode.UpArrow))
+        if (_isPlayerNear)
         {
             // ドアを非アクティブにする
             gameObject.SetActive(false);

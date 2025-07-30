@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 715752250202544399}
   - component: {fileID: 3752239370195819457}
   m_Layer: 0
-  m_Name: OpenDoor
+  m_Name: CloseDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
