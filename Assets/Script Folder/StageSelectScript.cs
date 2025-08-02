@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +5,9 @@ public class StageSelectScript : MonoBehaviour
 {
     [Header("ステージ選択ポイントの配列")]
     public GameObject[] stageSelectPoints = default; // ステージの選択ポイントの配列
-
-    private int currentStageIndex = 0; // 現在の選択ステージのインデックス
+    private float inputCooldown = 0.3f; // 入力のクールダウン時間（秒）
+    private float inputTimer = 0f; // 入力処理のタイマー
+    private int currentStageIndex = 0; // 現在選択中のステージのインデックス
 
     void Start()
     {
@@ -22,26 +20,45 @@ public class StageSelectScript : MonoBehaviour
 
     void Update()
     {
-        if (stageSelectPoints != null && stageSelectPoints.Length > 0)
-        {
-            // 十字キーの左が押されたとき
+        if (stageSelectPoints == null || stageSelectPoints.Length == 0) { return; }
 
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        // 入力クールダウン時間のカウントダウン
+        if (inputTimer > 0)
+        {
+            inputTimer -= Time.deltaTime;
+        }
+
+        // 水平軸の入力取得
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float threshold = 0.1f; // 入力判定の閾値
+
+        // 入力クールダウン済みかつ閾値を超えた入力があった場合
+        if (inputTimer <= 0)
+        {
+            // 左に入力された場合
+            if (horizontalInput < -threshold)
             {
-                // インデックスを減らす（範囲内に収める）
+                // ステージインデックスを減らす（左に移動）
                 currentStageIndex = Mathf.Max(currentStageIndex - 1, 0);
                 transform.position = stageSelectPoints[currentStageIndex].transform.position;
+                inputTimer = inputCooldown;
             }
-
-            // 右キー（D）が押されたとき
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            // 右に入力された場合
+            else if (horizontalInput > threshold)
             {
-                // インデックスを増やす（範囲内に収める）
+                // ステージインデックスを増やす（右に移動）
                 currentStageIndex = Mathf.Min(currentStageIndex + 1, stageSelectPoints.Length - 1);
                 transform.position = stageSelectPoints[currentStageIndex].transform.position;
+                inputTimer = inputCooldown;
             }
 
-            // ジャンプキーでシーン切り替え
+            // 戻るキー（Backspace or Cancelボタン）でタイトルシーンへ
+            if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetButtonDown("Cancel"))
+            {
+                SceneManager.LoadScene("TitleScene");
+            }
+
+            // ジャンプキーでシーンを切り替え
             if (Input.GetButtonDown("Jump"))
             {
                 switch (currentStageIndex)
