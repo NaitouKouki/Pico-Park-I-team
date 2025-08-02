@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doorPosition: {x: 0, y: 0}
   playerTransform: {fileID: 1912296181}
-  m_targetObject: {fileID: 0}
+  m_targetObject: {fileID: 9029937108458841472, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
   doorTexture: {fileID: 2800000, guid: dbd66e25aa879924995a6bdc398c9904, type: 3}
 --- !u!1 &399431648
 GameObject:
@@ -450,62 +450,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: normalSprite
-      value: 
-      objectReference: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: spriteChangeCooldown
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: runSprites.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: idleSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: jumpSprites.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: runSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: -2453208753318357113, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: runSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 6348790710242686107, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: runSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 5513914976837039818, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: runSprites.Array.data[3]
-      value: 
-      objectReference: {fileID: -434675778434299504, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: idleSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: idleSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 2962027833772318483, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: jumpSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 5907920678353447086, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: jumpSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 5907920678353447086, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
-    - target: {fileID: 7760113197339668268, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
-      propertyPath: jumpSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: -6086044393419928071, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
     - target: {fileID: 9029937108458841472, guid: e10b7bb6cd051b64a967a9b45a0fcbff, type: 3}
       propertyPath: m_Icon
       value: 
